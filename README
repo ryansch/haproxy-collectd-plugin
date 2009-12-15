@@ -1,0 +1,5 @@
+This HAProxy Collectd plugin was implemented for the RightScale (http://rightscale.com) environment but should be easily adaptable for other uses.
+
+It reads from the HAProxy stats socket and uses the column names in the first line to locate the correct columns for output to collectd.  It also supports an accumulator for adding up totals for desired columns.  See the @haproxy_vars instance variable for an example.
+
+See the included haproxy.conf for an example collectd plugin config file.
