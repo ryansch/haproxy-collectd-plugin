@@ -3,3 +3,11 @@ This HAProxy Collectd plugin was implemented for the RightScale (http://rightsca
 It reads from the HAProxy stats socket and uses the column names in the first line to locate the correct columns for output to collectd.  It also supports an accumulator for adding up totals for desired columns.  See the @haproxy_vars instance variable for an example.
 
 See the included haproxy.conf for an example collectd plugin config file.
+
+Add the following to your types.db:
+
+haproxy_status          status:GAUGE:-2:2
+haproxy_traffic         stot:COUNTER:0:U, eresp:COUNTER:0:U, chkfail:COUNTER:0:U
+haproxy_sessions        qcur:GAUGE:0:U, scur:GAUGE:0:U
+
+If you send the data over the network, make sure you update all the types.db.
